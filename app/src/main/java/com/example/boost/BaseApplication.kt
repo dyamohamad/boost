@@ -3,6 +3,7 @@ package com.example.boost
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
+import com.example.boost.model.TopicDetails
 
 /**
  * Created by Diyana
@@ -22,4 +23,6 @@ class BaseApplication:Application(){
         super.onCreate()
 
     }
+
+
 }
