@@ -6,8 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.boost.R
+import com.example.boost.adapter.ListAdapter
+import com.example.boost.databinding.FragmentMainFragmentBinding
 import com.example.boost.model.TopicDetails
 import com.example.boost.viewmodel.FragmentMainViewModel
 
@@ -18,21 +21,38 @@ class FragmentMain : Fragment() {
     }
 
     private lateinit var viewModel: FragmentMainViewModel
-
+    lateinit var binding: FragmentMainFragmentBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_main_fragment, container, false)
+        binding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_main_fragment, container, false
+        )
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(FragmentMainViewModel::class.java)
         // TODO: Use the ViewModel
+        binding.viewmodel = viewModel
+        binding.lifecycleOwner = this
+
+        initRecyclerView()
     }
 
-    private val initList = arrayListOf(
+    fun initRecyclerView(){
+
+
+        val adapter = ListAdapter(list)
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.setHasFixedSize(true)
+    }
+
+
+    private val list = arrayListOf(
         TopicDetails(resources.getString(R.string.first_title), 0,10),
         TopicDetails(resources.getString(R.string.sec_title), 11,9),
         TopicDetails(resources.getString(R.string.thid_title), 90,10),
@@ -54,5 +74,6 @@ class FragmentMain : Fragment() {
         TopicDetails(resources.getString(R.string.nineteen_title), 0,50),
         TopicDetails(resources.getString(R.string.twenty_title), 10,10)
     )
+
 
 }

@@ -7,6 +7,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
+        android:id="@+id/tv_topic"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
