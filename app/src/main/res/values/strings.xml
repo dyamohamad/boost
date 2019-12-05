@@ -1,4 +1,33 @@
 <resources>
     <string name="app_name">boost</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+
+    <string name="first_title">what do you think about feminism</string>
+    <string name="sec_title">All I wanna do is sleep all night long</string>
+    <string name="thid_title">Ultraman will be in Avengers series??</string>
+    <string name="fourth_title">The best subreddits you aren’t already subscribed to</string>
+    <string name="fifth_title">The House Judiciary Committee kicked off its first hearing of the impeachment inquiry at 10 a.m</string>
+    <string name="sixth_title">Key takeaways on the House Judiciary Committees 1st hearing on Trumps impeachment</string>
+    <string name="seven_title">Three of the witnesses were lawyers handpicked by the Democratic majority: Pamela Khan, a professor at Stanford Law School; Michael Gerhardt
+        a professor at the University of North Carolina School of Law; and Noah Feldman, a professor at Harvard Law Schoo</string>
+    <string name="eight_title">Among the three Democratic-picked lawyers, there was no doubt: Trump,
+        they testified, abused his power in office by pressuring Ukraine to investigate his political rival.</string>
+    <string name="nine_title">Androidx</string>
+    <string name="tenth_title">Man Utd were excellent as they defeated Tottenham 2-1 in the Premier League fixture on Wednesday night.</string>
+    <string name="eleven_title">Manchester United have discovered their midfield solution after Tottenham game</string>
+    <string name="twelvth_title">In the absence of Paul Pogba it has been hard for United to adapt to a set-up which offers them the adequate
+        variety in the centre of the pitch, but it seems like they have finally found their best alternative formula.</string>
+    <string name="thirteen_title">It is true a players reputation often grows when out of the team, but for the Scotland international it is justified.</string>
+    <string name="fourteen_title">What will please Solskjaer the most though is that McTominay wasnt the only midfielder to impress as United shut out a rejuvenated Tottenham.</string>
+    <string name="fifteen_title">why MU??</string>
+    <string name="siteen_title">whats to cook today??</string>
+    <string name="seventeen_title">What do you think about ios and android?</string>
+    <string name="eighteen_title">which device to buy??</string>
+    <string name="nineteen_title">What do you think about equality?</string>
+    <string name="twenty_title">Islamophobia</string>
+
+
+
 </resources>
