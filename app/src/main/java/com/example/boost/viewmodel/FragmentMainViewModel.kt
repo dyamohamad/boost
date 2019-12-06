@@ -2,6 +2,7 @@ package com.example.boost.viewmodel
 
 import android.view.View
 import androidx.lifecycle.ViewModel
+import com.example.boost.BaseApplication
 import com.example.boost.R
 import com.example.boost.model.TopicDetails
 import com.example.boost.util.SingleLiveEvent
@@ -14,6 +15,15 @@ class FragmentMainViewModel : ViewModel() {
     fun onClickAddNewTopic(v: View) {
         onClickAdd.postValue(v)
     }
+
+
+    fun compareUpvoteDescendingOrder():List<TopicDetails>
+    {
+        return ArrayList(BaseApplication.instance.list)
+            .sortedWith(compareByDescending<TopicDetails> { it.upVote })
+
+    }
+
 
 
 

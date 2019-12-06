@@ -16,6 +16,7 @@
         tools:text="john doe" />
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingRight="10dp"
