@@ -9,12 +9,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.boost.R
 import com.example.boost.adapter.ListAdapter
 import com.example.boost.databinding.FragmentMainFragmentBinding
 import com.example.boost.listener.OnItemListener
 import com.example.boost.model.TopicDetails
+import com.example.boost.util.LocalKey
 import com.example.boost.viewmodel.FragmentMainViewModel
 import kotlinx.android.synthetic.main.field.view.*
 
@@ -62,9 +64,11 @@ class FragmentMain : Fragment() {
                 OnItemListener<TopicDetails> {
                 override fun onClickItem(position: Int, data: TopicDetails?) {
                     context?.let {
-                        //click upvote or downvote
-
-
+                        val bundle = Bundle().apply {
+                            putString(LocalKey.DATA, data!!.topicTItle)
+                        }
+                            //navigate to the new fragment to show the topic on another fragment
+                        findNavController().navigate(R.id.action_mainFragment_to_descriptionFragment, bundle)
                     }
 
                 }
@@ -79,10 +83,9 @@ class FragmentMain : Fragment() {
                             }
 
                             DOWN_VOTE -> {
-                                if (listArray.get(position).downvote != 0) {
-                                    listArray.get(position).downvote--
+                                    listArray.get(position).downvote++
                                     adapter.notifyItemChanged(position)
-                                }
+
 
                             }
 
@@ -100,6 +103,7 @@ class FragmentMain : Fragment() {
         binding.recyclerView.setHasFixedSize(true)
     }
 
+    //show alert dialog to add a new topic
     fun showAlertDialogToAddNewTopic() {
         val builder = AlertDialog.Builder(getContext())
         val view = layoutInflater.inflate(R.layout.field, null)
