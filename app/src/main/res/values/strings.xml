@@ -28,6 +28,8 @@
     <string name="nineteen_title">What do you think about equality?</string>
     <string name="twenty_title">Islamophobia</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
