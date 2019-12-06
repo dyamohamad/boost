@@ -2,6 +2,7 @@ package com.example.boost
 
 import android.app.Application
 import android.content.Context
+import android.content.res.Resources
 import androidx.multidex.MultiDex
 import com.example.boost.model.TopicDetails
 
@@ -22,7 +23,11 @@ class BaseApplication:Application(){
     override fun onCreate() {
         super.onCreate()
 
+        instance = this
     }
+
+
+
 
 
 }

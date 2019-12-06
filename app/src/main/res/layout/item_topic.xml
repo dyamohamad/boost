@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:id="@+id/tv_topic"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
@@ -15,23 +15,56 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="john doe" />
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <LinearLayout
+        android:id="@+id/linear"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingRight="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tv_topic"
+        android:paddingLeft="10dp"
         android:paddingTop="10dp"
-        android:src="@drawable/thumb_up"
-        app:layout_constraintRight_toLeftOf="@+id/img_down"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingBottom="10dp"
+        android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/img_down"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:src="@drawable/thumb_down"
-        android:paddingRight="10dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_totalupvote"
+            android:layout_width="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:paddingTop="5dp"
+            tools:text="20"
+            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:src="@drawable/thumb_up"
+      />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_totalupdownvote"
+            android:layout_width="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorAccent"
+            android:paddingTop="5dp"
+            tools:text="20"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/thumb_down"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+
+
+    </LinearLayout>
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
